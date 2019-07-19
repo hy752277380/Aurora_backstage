@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hy.aurora.mapper.AurAnalysisMapper">
+    <resultMap id="BaseResultMap" type="cn.hy.aurora.domain.AurSysUser">
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+        <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+        <result column="user_github" jdbcType="VARCHAR" property="userGithub"/>
+        <result column="user_auth_code" jdbcType="VARCHAR" property="userAuthCode"/>
+        <result column="user_profile_photo" jdbcType="VARCHAR" property="userProfilePhoto"/>
+        <result column="user_registration_time" jdbcType="TIMESTAMP" property="userRegistrationTime"/>
+        <result column="user_deleted" jdbcType="BIT" property="userDeleted"/>
+    </resultMap>
+
+    <select id="selectAnalysis" resultType="java.util.HashMap">
+       SELECT
+       COUNT(I.article_id) AS 'n1',
+       COUNT(C.comment_id) AS 'n2',
+       COUNT(L1.log_id) AS 'n3',
+       datediff(now(), L2.log_create_time) AS 'n4'
+       FROM
+       aur_article_info AS I,
+       aur_article_comment AS C,
+       aur_sys_visit_log AS L1,
+       aur_sys_visit_log AS L2
+       WHERE
+       I.article_deleted = 0
+       AND comment_deleted = 2
+       AND comment_type = 1
+       AND L2.log_id = '1'
+    </select>
+</mapper>
