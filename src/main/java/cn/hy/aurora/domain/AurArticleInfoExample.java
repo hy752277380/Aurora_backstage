@@ -1,7 +1,6 @@
 package cn.hy.aurora.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AurArticleInfoExample {
@@ -355,6 +354,146 @@ public class AurArticleInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andArticleMdUrlIsNull() {
+            addCriterion("article_md_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlIsNotNull() {
+            addCriterion("article_md_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlEqualTo(String value) {
+            addCriterion("article_md_url =", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlNotEqualTo(String value) {
+            addCriterion("article_md_url <>", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlGreaterThan(String value) {
+            addCriterion("article_md_url >", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("article_md_url >=", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlLessThan(String value) {
+            addCriterion("article_md_url <", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlLessThanOrEqualTo(String value) {
+            addCriterion("article_md_url <=", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlLike(String value) {
+            addCriterion("article_md_url like", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlNotLike(String value) {
+            addCriterion("article_md_url not like", value, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlIn(List<String> values) {
+            addCriterion("article_md_url in", values, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlNotIn(List<String> values) {
+            addCriterion("article_md_url not in", values, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlBetween(String value1, String value2) {
+            addCriterion("article_md_url between", value1, value2, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleMdUrlNotBetween(String value1, String value2) {
+            addCriterion("article_md_url not between", value1, value2, "articleMdUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionIsNull() {
+            addCriterion("article_description is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionIsNotNull() {
+            addCriterion("article_description is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionEqualTo(String value) {
+            addCriterion("article_description =", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionNotEqualTo(String value) {
+            addCriterion("article_description <>", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionGreaterThan(String value) {
+            addCriterion("article_description >", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionGreaterThanOrEqualTo(String value) {
+            addCriterion("article_description >=", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionLessThan(String value) {
+            addCriterion("article_description <", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionLessThanOrEqualTo(String value) {
+            addCriterion("article_description <=", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionLike(String value) {
+            addCriterion("article_description like", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionNotLike(String value) {
+            addCriterion("article_description not like", value, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionIn(List<String> values) {
+            addCriterion("article_description in", values, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionNotIn(List<String> values) {
+            addCriterion("article_description not in", values, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionBetween(String value1, String value2) {
+            addCriterion("article_description between", value1, value2, "articleDescription");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleDescriptionNotBetween(String value1, String value2) {
+            addCriterion("article_description not between", value1, value2, "articleDescription");
+            return (Criteria) this;
+        }
+
         public Criteria andArticleCreatorIsNull() {
             addCriterion("article_creator is null");
             return (Criteria) this;
@@ -425,233 +564,63 @@ public class AurArticleInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateEqualTo(Date value) {
+        public Criteria andArticleCreateDateEqualTo(String value) {
             addCriterion("article_create_date =", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateNotEqualTo(Date value) {
+        public Criteria andArticleCreateDateNotEqualTo(String value) {
             addCriterion("article_create_date <>", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateGreaterThan(Date value) {
+        public Criteria andArticleCreateDateGreaterThan(String value) {
             addCriterion("article_create_date >", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andArticleCreateDateGreaterThanOrEqualTo(String value) {
             addCriterion("article_create_date >=", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateLessThan(Date value) {
+        public Criteria andArticleCreateDateLessThan(String value) {
             addCriterion("article_create_date <", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateLessThanOrEqualTo(Date value) {
+        public Criteria andArticleCreateDateLessThanOrEqualTo(String value) {
             addCriterion("article_create_date <=", value, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateIn(List<Date> values) {
+        public Criteria andArticleCreateDateLike(String value) {
+            addCriterion("article_create_date like", value, "articleCreateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleCreateDateNotLike(String value) {
+            addCriterion("article_create_date not like", value, "articleCreateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andArticleCreateDateIn(List<String> values) {
             addCriterion("article_create_date in", values, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateNotIn(List<Date> values) {
+        public Criteria andArticleCreateDateNotIn(List<String> values) {
             addCriterion("article_create_date not in", values, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateBetween(Date value1, Date value2) {
+        public Criteria andArticleCreateDateBetween(String value1, String value2) {
             addCriterion("article_create_date between", value1, value2, "articleCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCreateDateNotBetween(Date value1, Date value2) {
+        public Criteria andArticleCreateDateNotBetween(String value1, String value2) {
             addCriterion("article_create_date not between", value1, value2, "articleCreateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByIsNull() {
-            addCriterion("article_update_by is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByIsNotNull() {
-            addCriterion("article_update_by is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByEqualTo(Integer value) {
-            addCriterion("article_update_by =", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByNotEqualTo(Integer value) {
-            addCriterion("article_update_by <>", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByGreaterThan(Integer value) {
-            addCriterion("article_update_by >", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByGreaterThanOrEqualTo(Integer value) {
-            addCriterion("article_update_by >=", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByLessThan(Integer value) {
-            addCriterion("article_update_by <", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByLessThanOrEqualTo(Integer value) {
-            addCriterion("article_update_by <=", value, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByIn(List<Integer> values) {
-            addCriterion("article_update_by in", values, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByNotIn(List<Integer> values) {
-            addCriterion("article_update_by not in", values, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByBetween(Integer value1, Integer value2) {
-            addCriterion("article_update_by between", value1, value2, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateByNotBetween(Integer value1, Integer value2) {
-            addCriterion("article_update_by not between", value1, value2, "articleUpdateBy");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateIsNull() {
-            addCriterion("article_update_date is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateIsNotNull() {
-            addCriterion("article_update_date is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateEqualTo(Date value) {
-            addCriterion("article_update_date =", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateNotEqualTo(Date value) {
-            addCriterion("article_update_date <>", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateGreaterThan(Date value) {
-            addCriterion("article_update_date >", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("article_update_date >=", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateLessThan(Date value) {
-            addCriterion("article_update_date <", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateLessThanOrEqualTo(Date value) {
-            addCriterion("article_update_date <=", value, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateIn(List<Date> values) {
-            addCriterion("article_update_date in", values, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateNotIn(List<Date> values) {
-            addCriterion("article_update_date not in", values, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateBetween(Date value1, Date value2) {
-            addCriterion("article_update_date between", value1, value2, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleUpdateDateNotBetween(Date value1, Date value2) {
-            addCriterion("article_update_date not between", value1, value2, "articleUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionIsNull() {
-            addCriterion("article_version is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionIsNotNull() {
-            addCriterion("article_version is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionEqualTo(Float value) {
-            addCriterion("article_version =", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionNotEqualTo(Float value) {
-            addCriterion("article_version <>", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionGreaterThan(Float value) {
-            addCriterion("article_version >", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionGreaterThanOrEqualTo(Float value) {
-            addCriterion("article_version >=", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionLessThan(Float value) {
-            addCriterion("article_version <", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionLessThanOrEqualTo(Float value) {
-            addCriterion("article_version <=", value, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionIn(List<Float> values) {
-            addCriterion("article_version in", values, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionNotIn(List<Float> values) {
-            addCriterion("article_version not in", values, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionBetween(Float value1, Float value2) {
-            addCriterion("article_version between", value1, value2, "articleVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleVersionNotBetween(Float value1, Float value2) {
-            addCriterion("article_version not between", value1, value2, "articleVersion");
             return (Criteria) this;
         }
 

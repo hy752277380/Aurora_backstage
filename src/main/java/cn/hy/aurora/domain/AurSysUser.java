@@ -1,7 +1,5 @@
 package cn.hy.aurora.domain;
 
-import java.util.Date;
-
 public class AurSysUser {
     private Integer userId;
 
@@ -15,7 +13,7 @@ public class AurSysUser {
 
     private String userProfilePhoto;
 
-    private Date userRegistrationTime;
+    private String userRegistrationTime;
 
     private Boolean userDeleted;
 
@@ -67,12 +65,12 @@ public class AurSysUser {
         this.userProfilePhoto = userProfilePhoto == null ? null : userProfilePhoto.trim();
     }
 
-    public Date getUserRegistrationTime() {
+    public String getUserRegistrationTime() {
         return userRegistrationTime;
     }
 
-    public void setUserRegistrationTime(Date userRegistrationTime) {
-        this.userRegistrationTime = userRegistrationTime;
+    public void setUserRegistrationTime(String userRegistrationTime) {
+        this.userRegistrationTime = userRegistrationTime == null ? null : userRegistrationTime.trim();
     }
 
     public Boolean getUserDeleted() {

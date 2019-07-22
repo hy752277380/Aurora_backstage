@@ -1,8 +1,5 @@
 package cn.hy.aurora.service.impl;
 
-import cn.hy.aurora.domain.AurArticleInfo;
-import cn.hy.aurora.domain.AurArticleInfoExample;
-import cn.hy.aurora.mapper.AurArticleInfoMapper;
 import cn.hy.aurora.service.AurArticleInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

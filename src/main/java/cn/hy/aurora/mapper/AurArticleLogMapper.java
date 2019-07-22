@@ -4,10 +4,8 @@ import java.util.List;
 
 import cn.hy.aurora.domain.AurArticleLog;
 import cn.hy.aurora.domain.AurArticleLogExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface AurArticleLogMapper {
     long countByExample(AurArticleLogExample example);
 

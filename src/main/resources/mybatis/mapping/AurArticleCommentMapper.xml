@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.hy.aurora.mapper.AurArticleCommentMapper">
-  <resultMap id="BaseResultMap" type="cn.hy.aurora.domain.AurArticleComment">
+  <resultMap id="BaseResultMap" type="cn.hy.aurora.mapper.AurArticleComment">
     <result column="comment_id" jdbcType="INTEGER" property="commentId" />
-    <result column="comment_create" jdbcType="INTEGER" property="commentCreate" />
-    <result column="comment_create_date" jdbcType="TIMESTAMP" property="commentCreateDate" />
-    <result column="comment_update" jdbcType="INTEGER" property="commentUpdate" />
-    <result column="comment_update_date" jdbcType="TIMESTAMP" property="commentUpdateDate" />
-    <result column="comment_version" jdbcType="BIT" property="commentVersion" />
-    <result column="comment_deleted" jdbcType="BIT" property="commentDeleted" />
-    <result column="comment_content" jdbcType="VARCHAR" property="commentContent" />
     <result column="comment_name" jdbcType="VARCHAR" property="commentName" />
     <result column="comment_email" jdbcType="VARCHAR" property="commentEmail" />
-    <result column="comment_article_id" jdbcType="INTEGER" property="commentArticleId" />
+    <result column="comment_content" jdbcType="VARCHAR" property="commentContent" />
+    <result column="comment_create" jdbcType="INTEGER" property="commentCreate" />
+    <result column="comment_create_date" jdbcType="VARCHAR" property="commentCreateDate" />
+    <result column="comment_type_id" jdbcType="INTEGER" property="commentTypeId" />
     <result column="comment_type" jdbcType="BIT" property="commentType" />
+    <result column="comment_deleted" jdbcType="BIT" property="commentDeleted" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,11 +71,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    comment_id, comment_create, comment_create_date, comment_update, comment_update_date, 
-    comment_version, comment_deleted, comment_content, comment_name, comment_email, comment_atricle_id, 
-    comment_type
+    comment_id, comment_name, comment_email, comment_content, comment_create, comment_create_date, 
+    comment_type_id, comment_type, comment_deleted
   </sql>
-  <select id="selectByExample" parameterType="cn.hy.aurora.domain.AurArticleCommentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.hy.aurora.mapper.AurArticleCommentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,50 +88,27 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.hy.aurora.domain.AurArticleCommentExample">
+  <delete id="deleteByExample" parameterType="cn.hy.aurora.mapper.AurArticleCommentExample">
     delete from aur_article_comment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.hy.aurora.domain.AurArticleComment">
-    insert into aur_article_comment (comment_id, comment_create, comment_create_date, 
-      comment_update, comment_update_date, comment_version, 
-      comment_deleted, comment_content, comment_name, 
-      comment_email, comment_atricle_id, comment_type
+  <insert id="insert" parameterType="cn.hy.aurora.mapper.AurArticleComment">
+    insert into aur_article_comment (comment_id, comment_name, comment_email, 
+      comment_content, comment_create, comment_create_date, 
+      comment_type_id, comment_type, comment_deleted
       )
-    values (#{commentId,jdbcType=INTEGER}, #{commentCreate,jdbcType=INTEGER}, #{commentCreateDate,jdbcType=TIMESTAMP}, 
-      #{commentUpdate,jdbcType=INTEGER}, #{commentUpdateDate,jdbcType=TIMESTAMP}, #{commentVersion,jdbcType=BIT}, 
-      #{commentDeleted,jdbcType=BIT}, #{commentContent,jdbcType=VARCHAR}, #{commentName,jdbcType=VARCHAR}, 
-      #{commentEmail,jdbcType=VARCHAR}, #{commentAtricleId,jdbcType=INTEGER}, #{commentType,jdbcType=BIT}
+    values (#{commentId,jdbcType=INTEGER}, #{commentName,jdbcType=VARCHAR}, #{commentEmail,jdbcType=VARCHAR}, 
+      #{commentContent,jdbcType=VARCHAR}, #{commentCreate,jdbcType=INTEGER}, #{commentCreateDate,jdbcType=VARCHAR}, 
+      #{commentTypeId,jdbcType=INTEGER}, #{commentType,jdbcType=BIT}, #{commentDeleted,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.hy.aurora.domain.AurArticleComment">
+  <insert id="insertSelective" parameterType="cn.hy.aurora.mapper.AurArticleComment">
     insert into aur_article_comment
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="commentId != null">
         comment_id,
-      </if>
-      <if test="commentCreate != null">
-        comment_create,
-      </if>
-      <if test="commentCreateDate != null">
-        comment_create_date,
-      </if>
-      <if test="commentUpdate != null">
-        comment_update,
-      </if>
-      <if test="commentUpdateDate != null">
-        comment_update_date,
-      </if>
-      <if test="commentVersion != null">
-        comment_version,
-      </if>
-      <if test="commentDeleted != null">
-        comment_deleted,
-      </if>
-      <if test="commentContent != null">
-        comment_content,
       </if>
       <if test="commentName != null">
         comment_name,
@@ -143,37 +116,28 @@
       <if test="commentEmail != null">
         comment_email,
       </if>
-      <if test="commentAtricleId != null">
-        comment_atricle_id,
+      <if test="commentContent != null">
+        comment_content,
+      </if>
+      <if test="commentCreate != null">
+        comment_create,
+      </if>
+      <if test="commentCreateDate != null">
+        comment_create_date,
+      </if>
+      <if test="commentTypeId != null">
+        comment_type_id,
       </if>
       <if test="commentType != null">
         comment_type,
+      </if>
+      <if test="commentDeleted != null">
+        comment_deleted,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="commentId != null">
         #{commentId,jdbcType=INTEGER},
-      </if>
-      <if test="commentCreate != null">
-        #{commentCreate,jdbcType=INTEGER},
-      </if>
-      <if test="commentCreateDate != null">
-        #{commentCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="commentUpdate != null">
-        #{commentUpdate,jdbcType=INTEGER},
-      </if>
-      <if test="commentUpdateDate != null">
-        #{commentUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="commentVersion != null">
-        #{commentVersion,jdbcType=BIT},
-      </if>
-      <if test="commentDeleted != null">
-        #{commentDeleted,jdbcType=BIT},
-      </if>
-      <if test="commentContent != null">
-        #{commentContent,jdbcType=VARCHAR},
       </if>
       <if test="commentName != null">
         #{commentName,jdbcType=VARCHAR},
@@ -181,15 +145,27 @@
       <if test="commentEmail != null">
         #{commentEmail,jdbcType=VARCHAR},
       </if>
-      <if test="commentAtricleId != null">
-        #{commentAtricleId,jdbcType=INTEGER},
+      <if test="commentContent != null">
+        #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCreate != null">
+        #{commentCreate,jdbcType=INTEGER},
+      </if>
+      <if test="commentCreateDate != null">
+        #{commentCreateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTypeId != null">
+        #{commentTypeId,jdbcType=INTEGER},
       </if>
       <if test="commentType != null">
         #{commentType,jdbcType=BIT},
       </if>
+      <if test="commentDeleted != null">
+        #{commentDeleted,jdbcType=BIT},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.hy.aurora.domain.AurArticleCommentExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.hy.aurora.mapper.AurArticleCommentExample" resultType="java.lang.Long">
     select count(*) from aur_article_comment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -201,38 +177,29 @@
       <if test="record.commentId != null">
         comment_id = #{record.commentId,jdbcType=INTEGER},
       </if>
-      <if test="record.commentCreate != null">
-        comment_create = #{record.commentCreate,jdbcType=INTEGER},
-      </if>
-      <if test="record.commentCreateDate != null">
-        comment_create_date = #{record.commentCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.commentUpdate != null">
-        comment_update = #{record.commentUpdate,jdbcType=INTEGER},
-      </if>
-      <if test="record.commentUpdateDate != null">
-        comment_update_date = #{record.commentUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.commentVersion != null">
-        comment_version = #{record.commentVersion,jdbcType=BIT},
-      </if>
-      <if test="record.commentDeleted != null">
-        comment_deleted = #{record.commentDeleted,jdbcType=BIT},
-      </if>
-      <if test="record.commentContent != null">
-        comment_content = #{record.commentContent,jdbcType=VARCHAR},
-      </if>
       <if test="record.commentName != null">
         comment_name = #{record.commentName,jdbcType=VARCHAR},
       </if>
       <if test="record.commentEmail != null">
         comment_email = #{record.commentEmail,jdbcType=VARCHAR},
       </if>
-      <if test="record.commentAtricleId != null">
-        comment_atricle_id = #{record.commentAtricleId,jdbcType=INTEGER},
+      <if test="record.commentContent != null">
+        comment_content = #{record.commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentCreate != null">
+        comment_create = #{record.commentCreate,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentCreateDate != null">
+        comment_create_date = #{record.commentCreateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentTypeId != null">
+        comment_type_id = #{record.commentTypeId,jdbcType=INTEGER},
       </if>
       <if test="record.commentType != null">
         comment_type = #{record.commentType,jdbcType=BIT},
+      </if>
+      <if test="record.commentDeleted != null">
+        comment_deleted = #{record.commentDeleted,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -242,17 +209,14 @@
   <update id="updateByExample" parameterType="map">
     update aur_article_comment
     set comment_id = #{record.commentId,jdbcType=INTEGER},
-      comment_create = #{record.commentCreate,jdbcType=INTEGER},
-      comment_create_date = #{record.commentCreateDate,jdbcType=TIMESTAMP},
-      comment_update = #{record.commentUpdate,jdbcType=INTEGER},
-      comment_update_date = #{record.commentUpdateDate,jdbcType=TIMESTAMP},
-      comment_version = #{record.commentVersion,jdbcType=BIT},
-      comment_deleted = #{record.commentDeleted,jdbcType=BIT},
-      comment_content = #{record.commentContent,jdbcType=VARCHAR},
       comment_name = #{record.commentName,jdbcType=VARCHAR},
       comment_email = #{record.commentEmail,jdbcType=VARCHAR},
-      comment_atricle_id = #{record.commentAtricleId,jdbcType=INTEGER},
-      comment_type = #{record.commentType,jdbcType=BIT}
+      comment_content = #{record.commentContent,jdbcType=VARCHAR},
+      comment_create = #{record.commentCreate,jdbcType=INTEGER},
+      comment_create_date = #{record.commentCreateDate,jdbcType=VARCHAR},
+      comment_type_id = #{record.commentTypeId,jdbcType=INTEGER},
+      comment_type = #{record.commentType,jdbcType=BIT},
+      comment_deleted = #{record.commentDeleted,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

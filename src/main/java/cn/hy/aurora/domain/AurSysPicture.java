@@ -1,7 +1,5 @@
 package cn.hy.aurora.domain;
 
-import java.util.Date;
-
 public class AurSysPicture {
     private Integer pictureId;
 
@@ -11,13 +9,7 @@ public class AurSysPicture {
 
     private Integer pictureCreate;
 
-    private Date pictureCreateDate;
-
-    private Integer pictureUpdate;
-
-    private Date pictureUpdateDate;
-
-    private Boolean pictureVersion;
+    private String pictureCreateDate;
 
     private Boolean pictureDeleted;
 
@@ -53,36 +45,12 @@ public class AurSysPicture {
         this.pictureCreate = pictureCreate;
     }
 
-    public Date getPictureCreateDate() {
+    public String getPictureCreateDate() {
         return pictureCreateDate;
     }
 
-    public void setPictureCreateDate(Date pictureCreateDate) {
-        this.pictureCreateDate = pictureCreateDate;
-    }
-
-    public Integer getPictureUpdate() {
-        return pictureUpdate;
-    }
-
-    public void setPictureUpdate(Integer pictureUpdate) {
-        this.pictureUpdate = pictureUpdate;
-    }
-
-    public Date getPictureUpdateDate() {
-        return pictureUpdateDate;
-    }
-
-    public void setPictureUpdateDate(Date pictureUpdateDate) {
-        this.pictureUpdateDate = pictureUpdateDate;
-    }
-
-    public Boolean getPictureVersion() {
-        return pictureVersion;
-    }
-
-    public void setPictureVersion(Boolean pictureVersion) {
-        this.pictureVersion = pictureVersion;
+    public void setPictureCreateDate(String pictureCreateDate) {
+        this.pictureCreateDate = pictureCreateDate == null ? null : pictureCreateDate.trim();
     }
 
     public Boolean getPictureDeleted() {

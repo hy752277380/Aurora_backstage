@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.hy.aurora.mapper.AurArticleInfoMapper">
-  <resultMap id="BaseResultMap" type="cn.hy.aurora.domain.AurArticleInfo">
+  <resultMap id="BaseResultMap" type="cn.hy.aurora.mapper.AurArticleInfo">
     <result column="article_id" jdbcType="INTEGER" property="articleId" />
     <result column="article_title" jdbcType="VARCHAR" property="articleTitle" />
     <result column="article_author" jdbcType="INTEGER" property="articleAuthor" />
     <result column="article_label" jdbcType="INTEGER" property="articleLabel" />
+    <result column="article_md_url" jdbcType="VARCHAR" property="articleMdUrl" />
+    <result column="article_description" jdbcType="VARCHAR" property="articleDescription" />
     <result column="article_creator" jdbcType="INTEGER" property="articleCreator" />
-    <result column="article_create_date" jdbcType="TIMESTAMP" property="articleCreateDate" />
-    <result column="article_update_by" jdbcType="INTEGER" property="articleUpdateBy" />
-    <result column="article_update_date" jdbcType="TIMESTAMP" property="articleUpdateDate" />
-    <result column="article_version" jdbcType="REAL" property="articleVersion" />
+    <result column="article_create_date" jdbcType="VARCHAR" property="articleCreateDate" />
     <result column="article_original" jdbcType="BIT" property="articleOriginal" />
     <result column="article_original_link" jdbcType="VARCHAR" property="articleOriginalLink" />
     <result column="article_secret" jdbcType="BIT" property="articleSecret" />
@@ -76,11 +75,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    article_id, article_title, article_author, article_label, article_creator, article_create_date, 
-    article_update_by, article_update_date, article_version, article_original, article_original_link, 
-    article_secret, article_top, article_deleted
+    article_id, article_title, article_author, article_label, article_md_url, article_description, 
+    article_creator, article_create_date, article_original, article_original_link, article_secret, 
+    article_top, article_deleted
   </sql>
-  <select id="selectByExample" parameterType="cn.hy.aurora.domain.AurArticleInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.hy.aurora.mapper.AurArticleInfoExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,25 +93,25 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.hy.aurora.domain.AurArticleInfoExample">
+  <delete id="deleteByExample" parameterType="cn.hy.aurora.mapper.AurArticleInfoExample">
     delete from aur_article_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.hy.aurora.domain.AurArticleInfo">
+  <insert id="insert" parameterType="cn.hy.aurora.mapper.AurArticleInfo">
     insert into aur_article_info (article_id, article_title, article_author, 
-      article_label, article_creator, article_create_date, 
-      article_update_by, article_update_date, article_version, 
-      article_original, article_original_link, article_secret, 
-      article_top, article_deleted)
+      article_label, article_md_url, article_description, 
+      article_creator, article_create_date, article_original, 
+      article_original_link, article_secret, article_top, 
+      article_deleted)
     values (#{articleId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR}, #{articleAuthor,jdbcType=INTEGER}, 
-      #{articleLabel,jdbcType=INTEGER}, #{articleCreator,jdbcType=INTEGER}, #{articleCreateDate,jdbcType=TIMESTAMP}, 
-      #{articleUpdateBy,jdbcType=INTEGER}, #{articleUpdateDate,jdbcType=TIMESTAMP}, #{articleVersion,jdbcType=REAL}, 
-      #{articleOriginal,jdbcType=BIT}, #{articleOriginalLink,jdbcType=VARCHAR}, #{articleSecret,jdbcType=BIT}, 
-      #{articleTop,jdbcType=BIT}, #{articleDeleted,jdbcType=BIT})
+      #{articleLabel,jdbcType=INTEGER}, #{articleMdUrl,jdbcType=VARCHAR}, #{articleDescription,jdbcType=VARCHAR}, 
+      #{articleCreator,jdbcType=INTEGER}, #{articleCreateDate,jdbcType=VARCHAR}, #{articleOriginal,jdbcType=BIT}, 
+      #{articleOriginalLink,jdbcType=VARCHAR}, #{articleSecret,jdbcType=BIT}, #{articleTop,jdbcType=BIT}, 
+      #{articleDeleted,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="cn.hy.aurora.domain.AurArticleInfo">
+  <insert id="insertSelective" parameterType="cn.hy.aurora.mapper.AurArticleInfo">
     insert into aur_article_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="articleId != null">
@@ -127,20 +126,17 @@
       <if test="articleLabel != null">
         article_label,
       </if>
+      <if test="articleMdUrl != null">
+        article_md_url,
+      </if>
+      <if test="articleDescription != null">
+        article_description,
+      </if>
       <if test="articleCreator != null">
         article_creator,
       </if>
       <if test="articleCreateDate != null">
         article_create_date,
-      </if>
-      <if test="articleUpdateBy != null">
-        article_update_by,
-      </if>
-      <if test="articleUpdateDate != null">
-        article_update_date,
-      </if>
-      <if test="articleVersion != null">
-        article_version,
       </if>
       <if test="articleOriginal != null">
         article_original,
@@ -171,20 +167,17 @@
       <if test="articleLabel != null">
         #{articleLabel,jdbcType=INTEGER},
       </if>
+      <if test="articleMdUrl != null">
+        #{articleMdUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="articleDescription != null">
+        #{articleDescription,jdbcType=VARCHAR},
+      </if>
       <if test="articleCreator != null">
         #{articleCreator,jdbcType=INTEGER},
       </if>
       <if test="articleCreateDate != null">
-        #{articleCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="articleUpdateBy != null">
-        #{articleUpdateBy,jdbcType=INTEGER},
-      </if>
-      <if test="articleUpdateDate != null">
-        #{articleUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="articleVersion != null">
-        #{articleVersion,jdbcType=REAL},
+        #{articleCreateDate,jdbcType=VARCHAR},
       </if>
       <if test="articleOriginal != null">
         #{articleOriginal,jdbcType=BIT},
@@ -203,7 +196,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.hy.aurora.domain.AurArticleInfoExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.hy.aurora.mapper.AurArticleInfoExample" resultType="java.lang.Long">
     select count(*) from aur_article_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -224,20 +217,17 @@
       <if test="record.articleLabel != null">
         article_label = #{record.articleLabel,jdbcType=INTEGER},
       </if>
+      <if test="record.articleMdUrl != null">
+        article_md_url = #{record.articleMdUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleDescription != null">
+        article_description = #{record.articleDescription,jdbcType=VARCHAR},
+      </if>
       <if test="record.articleCreator != null">
         article_creator = #{record.articleCreator,jdbcType=INTEGER},
       </if>
       <if test="record.articleCreateDate != null">
-        article_create_date = #{record.articleCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.articleUpdateBy != null">
-        article_update_by = #{record.articleUpdateBy,jdbcType=INTEGER},
-      </if>
-      <if test="record.articleUpdateDate != null">
-        article_update_date = #{record.articleUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.articleVersion != null">
-        article_version = #{record.articleVersion,jdbcType=REAL},
+        article_create_date = #{record.articleCreateDate,jdbcType=VARCHAR},
       </if>
       <if test="record.articleOriginal != null">
         article_original = #{record.articleOriginal,jdbcType=BIT},
@@ -265,11 +255,10 @@
       article_title = #{record.articleTitle,jdbcType=VARCHAR},
       article_author = #{record.articleAuthor,jdbcType=INTEGER},
       article_label = #{record.articleLabel,jdbcType=INTEGER},
+      article_md_url = #{record.articleMdUrl,jdbcType=VARCHAR},
+      article_description = #{record.articleDescription,jdbcType=VARCHAR},
       article_creator = #{record.articleCreator,jdbcType=INTEGER},
-      article_create_date = #{record.articleCreateDate,jdbcType=TIMESTAMP},
-      article_update_by = #{record.articleUpdateBy,jdbcType=INTEGER},
-      article_update_date = #{record.articleUpdateDate,jdbcType=TIMESTAMP},
-      article_version = #{record.articleVersion,jdbcType=REAL},
+      article_create_date = #{record.articleCreateDate,jdbcType=VARCHAR},
       article_original = #{record.articleOriginal,jdbcType=BIT},
       article_original_link = #{record.articleOriginalLink,jdbcType=VARCHAR},
       article_secret = #{record.articleSecret,jdbcType=BIT},

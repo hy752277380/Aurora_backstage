@@ -1,17 +1,15 @@
 package cn.hy.aurora.domain;
 
-import java.util.Date;
-
 public class AurArticleLog {
     private Integer logId;
 
     private Integer visitArticleId;
 
-    private Date visitIntoTime;
+    private String visitIntoTime;
 
     private String visitIp;
 
-    private Date logCreateTime;
+    private String logCreateTime;
 
     public Integer getLogId() {
         return logId;
@@ -29,12 +27,12 @@ public class AurArticleLog {
         this.visitArticleId = visitArticleId;
     }
 
-    public Date getVisitIntoTime() {
+    public String getVisitIntoTime() {
         return visitIntoTime;
     }
 
-    public void setVisitIntoTime(Date visitIntoTime) {
-        this.visitIntoTime = visitIntoTime;
+    public void setVisitIntoTime(String visitIntoTime) {
+        this.visitIntoTime = visitIntoTime == null ? null : visitIntoTime.trim();
     }
 
     public String getVisitIp() {
@@ -45,11 +43,11 @@ public class AurArticleLog {
         this.visitIp = visitIp == null ? null : visitIp.trim();
     }
 
-    public Date getLogCreateTime() {
+    public String getLogCreateTime() {
         return logCreateTime;
     }
 
-    public void setLogCreateTime(Date logCreateTime) {
-        this.logCreateTime = logCreateTime;
+    public void setLogCreateTime(String logCreateTime) {
+        this.logCreateTime = logCreateTime == null ? null : logCreateTime.trim();
     }
 }

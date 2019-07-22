@@ -1,7 +1,5 @@
 package cn.hy.aurora.domain;
 
-import java.util.Date;
-
 public class AurArticleLabel {
     private Integer labelId;
 
@@ -11,11 +9,7 @@ public class AurArticleLabel {
 
     private Integer labelCreate;
 
-    private Date labelCreateTime;
-
-    private Integer labelUpdate;
-
-    private Date labelUpdateTme;
+    private String labelCreateDate;
 
     private Integer labelParent;
 
@@ -53,28 +47,12 @@ public class AurArticleLabel {
         this.labelCreate = labelCreate;
     }
 
-    public Date getLabelCreateTime() {
-        return labelCreateTime;
+    public String getLabelCreateDate() {
+        return labelCreateDate;
     }
 
-    public void setLabelCreateTime(Date labelCreateTime) {
-        this.labelCreateTime = labelCreateTime;
-    }
-
-    public Integer getLabelUpdate() {
-        return labelUpdate;
-    }
-
-    public void setLabelUpdate(Integer labelUpdate) {
-        this.labelUpdate = labelUpdate;
-    }
-
-    public Date getLabelUpdateTme() {
-        return labelUpdateTme;
-    }
-
-    public void setLabelUpdateTme(Date labelUpdateTme) {
-        this.labelUpdateTme = labelUpdateTme;
+    public void setLabelCreateDate(String labelCreateDate) {
+        this.labelCreateDate = labelCreateDate == null ? null : labelCreateDate.trim();
     }
 
     public Integer getLabelParent() {

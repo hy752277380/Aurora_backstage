@@ -1,7 +1,5 @@
 package cn.hy.aurora.service;
 
-import cn.hy.aurora.domain.AurArticleInfo;
-
 import java.util.List;
 
 /**

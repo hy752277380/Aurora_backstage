@@ -1,7 +1,6 @@
 package cn.hy.aurora.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AurSysPictureExample {
@@ -375,233 +374,63 @@ public class AurSysPictureExample {
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateEqualTo(Date value) {
+        public Criteria andPictureCreateDateEqualTo(String value) {
             addCriterion("picture_create_date =", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateNotEqualTo(Date value) {
+        public Criteria andPictureCreateDateNotEqualTo(String value) {
             addCriterion("picture_create_date <>", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateGreaterThan(Date value) {
+        public Criteria andPictureCreateDateGreaterThan(String value) {
             addCriterion("picture_create_date >", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andPictureCreateDateGreaterThanOrEqualTo(String value) {
             addCriterion("picture_create_date >=", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateLessThan(Date value) {
+        public Criteria andPictureCreateDateLessThan(String value) {
             addCriterion("picture_create_date <", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateLessThanOrEqualTo(Date value) {
+        public Criteria andPictureCreateDateLessThanOrEqualTo(String value) {
             addCriterion("picture_create_date <=", value, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateIn(List<Date> values) {
+        public Criteria andPictureCreateDateLike(String value) {
+            addCriterion("picture_create_date like", value, "pictureCreateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureCreateDateNotLike(String value) {
+            addCriterion("picture_create_date not like", value, "pictureCreateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureCreateDateIn(List<String> values) {
             addCriterion("picture_create_date in", values, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateNotIn(List<Date> values) {
+        public Criteria andPictureCreateDateNotIn(List<String> values) {
             addCriterion("picture_create_date not in", values, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateBetween(Date value1, Date value2) {
+        public Criteria andPictureCreateDateBetween(String value1, String value2) {
             addCriterion("picture_create_date between", value1, value2, "pictureCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andPictureCreateDateNotBetween(Date value1, Date value2) {
+        public Criteria andPictureCreateDateNotBetween(String value1, String value2) {
             addCriterion("picture_create_date not between", value1, value2, "pictureCreateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateIsNull() {
-            addCriterion("picture_update is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateIsNotNull() {
-            addCriterion("picture_update is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateEqualTo(Integer value) {
-            addCriterion("picture_update =", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateNotEqualTo(Integer value) {
-            addCriterion("picture_update <>", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateGreaterThan(Integer value) {
-            addCriterion("picture_update >", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("picture_update >=", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateLessThan(Integer value) {
-            addCriterion("picture_update <", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateLessThanOrEqualTo(Integer value) {
-            addCriterion("picture_update <=", value, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateIn(List<Integer> values) {
-            addCriterion("picture_update in", values, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateNotIn(List<Integer> values) {
-            addCriterion("picture_update not in", values, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateBetween(Integer value1, Integer value2) {
-            addCriterion("picture_update between", value1, value2, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateNotBetween(Integer value1, Integer value2) {
-            addCriterion("picture_update not between", value1, value2, "pictureUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateIsNull() {
-            addCriterion("picture_update_date is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateIsNotNull() {
-            addCriterion("picture_update_date is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateEqualTo(Date value) {
-            addCriterion("picture_update_date =", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateNotEqualTo(Date value) {
-            addCriterion("picture_update_date <>", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateGreaterThan(Date value) {
-            addCriterion("picture_update_date >", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("picture_update_date >=", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateLessThan(Date value) {
-            addCriterion("picture_update_date <", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateLessThanOrEqualTo(Date value) {
-            addCriterion("picture_update_date <=", value, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateIn(List<Date> values) {
-            addCriterion("picture_update_date in", values, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateNotIn(List<Date> values) {
-            addCriterion("picture_update_date not in", values, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateBetween(Date value1, Date value2) {
-            addCriterion("picture_update_date between", value1, value2, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureUpdateDateNotBetween(Date value1, Date value2) {
-            addCriterion("picture_update_date not between", value1, value2, "pictureUpdateDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionIsNull() {
-            addCriterion("picture_version is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionIsNotNull() {
-            addCriterion("picture_version is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionEqualTo(Boolean value) {
-            addCriterion("picture_version =", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionNotEqualTo(Boolean value) {
-            addCriterion("picture_version <>", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionGreaterThan(Boolean value) {
-            addCriterion("picture_version >", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("picture_version >=", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionLessThan(Boolean value) {
-            addCriterion("picture_version <", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionLessThanOrEqualTo(Boolean value) {
-            addCriterion("picture_version <=", value, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionIn(List<Boolean> values) {
-            addCriterion("picture_version in", values, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionNotIn(List<Boolean> values) {
-            addCriterion("picture_version not in", values, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionBetween(Boolean value1, Boolean value2) {
-            addCriterion("picture_version between", value1, value2, "pictureVersion");
-            return (Criteria) this;
-        }
-
-        public Criteria andPictureVersionNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("picture_version not between", value1, value2, "pictureVersion");
             return (Criteria) this;
         }
 

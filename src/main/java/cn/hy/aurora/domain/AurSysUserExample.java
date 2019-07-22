@@ -1,7 +1,6 @@
 package cn.hy.aurora.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AurSysUserExample {
@@ -525,52 +524,62 @@ public class AurSysUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeEqualTo(Date value) {
+        public Criteria andUserRegistrationTimeEqualTo(String value) {
             addCriterion("user_registration_time =", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeNotEqualTo(Date value) {
+        public Criteria andUserRegistrationTimeNotEqualTo(String value) {
             addCriterion("user_registration_time <>", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeGreaterThan(Date value) {
+        public Criteria andUserRegistrationTimeGreaterThan(String value) {
             addCriterion("user_registration_time >", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andUserRegistrationTimeGreaterThanOrEqualTo(String value) {
             addCriterion("user_registration_time >=", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeLessThan(Date value) {
+        public Criteria andUserRegistrationTimeLessThan(String value) {
             addCriterion("user_registration_time <", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeLessThanOrEqualTo(Date value) {
+        public Criteria andUserRegistrationTimeLessThanOrEqualTo(String value) {
             addCriterion("user_registration_time <=", value, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeIn(List<Date> values) {
+        public Criteria andUserRegistrationTimeLike(String value) {
+            addCriterion("user_registration_time like", value, "userRegistrationTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRegistrationTimeNotLike(String value) {
+            addCriterion("user_registration_time not like", value, "userRegistrationTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRegistrationTimeIn(List<String> values) {
             addCriterion("user_registration_time in", values, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeNotIn(List<Date> values) {
+        public Criteria andUserRegistrationTimeNotIn(List<String> values) {
             addCriterion("user_registration_time not in", values, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeBetween(Date value1, Date value2) {
+        public Criteria andUserRegistrationTimeBetween(String value1, String value2) {
             addCriterion("user_registration_time between", value1, value2, "userRegistrationTime");
             return (Criteria) this;
         }
 
-        public Criteria andUserRegistrationTimeNotBetween(Date value1, Date value2) {
+        public Criteria andUserRegistrationTimeNotBetween(String value1, String value2) {
             addCriterion("user_registration_time not between", value1, value2, "userRegistrationTime");
             return (Criteria) this;
         }

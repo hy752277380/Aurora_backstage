@@ -1,19 +1,15 @@
 package cn.hy.aurora.domain;
 
-import java.util.Date;
-
 public class AurSysVisitLog {
     private Integer logId;
 
-    private Date loginTime;
+    private String visitTime;
 
-    private Date leaveTime;
+    private String leaveTime;
 
     private String visitIp;
 
-    private Integer visitUser;
-
-    private Date logCreateTime;
+    private String logCreateTime;
 
     public Integer getLogId() {
         return logId;
@@ -23,20 +19,20 @@ public class AurSysVisitLog {
         this.logId = logId;
     }
 
-    public Date getLoginTime() {
-        return loginTime;
+    public String getVisitTime() {
+        return visitTime;
     }
 
-    public void setLoginTime(Date loginTime) {
-        this.loginTime = loginTime;
+    public void setVisitTime(String visitTime) {
+        this.visitTime = visitTime == null ? null : visitTime.trim();
     }
 
-    public Date getLeaveTime() {
+    public String getLeaveTime() {
         return leaveTime;
     }
 
-    public void setLeaveTime(Date leaveTime) {
-        this.leaveTime = leaveTime;
+    public void setLeaveTime(String leaveTime) {
+        this.leaveTime = leaveTime == null ? null : leaveTime.trim();
     }
 
     public String getVisitIp() {
@@ -47,19 +43,11 @@ public class AurSysVisitLog {
         this.visitIp = visitIp == null ? null : visitIp.trim();
     }
 
-    public Integer getVisitUser() {
-        return visitUser;
-    }
-
-    public void setVisitUser(Integer visitUser) {
-        this.visitUser = visitUser;
-    }
-
-    public Date getLogCreateTime() {
+    public String getLogCreateTime() {
         return logCreateTime;
     }
 
-    public void setLogCreateTime(Date logCreateTime) {
-        this.logCreateTime = logCreateTime;
+    public void setLogCreateTime(String logCreateTime) {
+        this.logCreateTime = logCreateTime == null ? null : logCreateTime.trim();
     }
 }

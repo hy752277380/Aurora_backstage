@@ -1,34 +1,23 @@
 package cn.hy.aurora.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
-
 public class AurArticleComment {
-    @JsonProperty("id")
     private Integer commentId;
-
-    private Integer commentCreate;
-
-    private Date commentCreateDate;
-
-    private Integer commentUpdate;
-
-    private Date commentUpdateDate;
-
-    private Boolean commentVersion;
-
-    private Boolean commentDeleted;
-
-    private String commentContent;
 
     private String commentName;
 
     private String commentEmail;
 
-    private Integer commentArticleId;
+    private String commentContent;
+
+    private Integer commentCreate;
+
+    private String commentCreateDate;
+
+    private Integer commentTypeId;
 
     private Boolean commentType;
+
+    private Boolean commentDeleted;
 
     public Integer getCommentId() {
         return commentId;
@@ -36,62 +25,6 @@ public class AurArticleComment {
 
     public void setCommentId(Integer commentId) {
         this.commentId = commentId;
-    }
-
-    public Integer getCommentCreate() {
-        return commentCreate;
-    }
-
-    public void setCommentCreate(Integer commentCreate) {
-        this.commentCreate = commentCreate;
-    }
-
-    public Date getCommentCreateDate() {
-        return commentCreateDate;
-    }
-
-    public void setCommentCreateDate(Date commentCreateDate) {
-        this.commentCreateDate = commentCreateDate;
-    }
-
-    public Integer getCommentUpdate() {
-        return commentUpdate;
-    }
-
-    public void setCommentUpdate(Integer commentUpdate) {
-        this.commentUpdate = commentUpdate;
-    }
-
-    public Date getCommentUpdateDate() {
-        return commentUpdateDate;
-    }
-
-    public void setCommentUpdateDate(Date commentUpdateDate) {
-        this.commentUpdateDate = commentUpdateDate;
-    }
-
-    public Boolean getCommentVersion() {
-        return commentVersion;
-    }
-
-    public void setCommentVersion(Boolean commentVersion) {
-        this.commentVersion = commentVersion;
-    }
-
-    public Boolean getCommentDeleted() {
-        return commentDeleted;
-    }
-
-    public void setCommentDeleted(Boolean commentDeleted) {
-        this.commentDeleted = commentDeleted;
-    }
-
-    public String getCommentContent() {
-        return commentContent;
-    }
-
-    public void setCommentContent(String commentContent) {
-        this.commentContent = commentContent == null ? null : commentContent.trim();
     }
 
     public String getCommentName() {
@@ -110,12 +43,36 @@ public class AurArticleComment {
         this.commentEmail = commentEmail == null ? null : commentEmail.trim();
     }
 
-    public Integer getCommentAtricleId() {
-        return commentArticleId;
+    public String getCommentContent() {
+        return commentContent;
     }
 
-    public void setCommentAtricleId(Integer commentAtricleId) {
-        this.commentArticleId = commentAtricleId;
+    public void setCommentContent(String commentContent) {
+        this.commentContent = commentContent == null ? null : commentContent.trim();
+    }
+
+    public Integer getCommentCreate() {
+        return commentCreate;
+    }
+
+    public void setCommentCreate(Integer commentCreate) {
+        this.commentCreate = commentCreate;
+    }
+
+    public String getCommentCreateDate() {
+        return commentCreateDate;
+    }
+
+    public void setCommentCreateDate(String commentCreateDate) {
+        this.commentCreateDate = commentCreateDate == null ? null : commentCreateDate.trim();
+    }
+
+    public Integer getCommentTypeId() {
+        return commentTypeId;
+    }
+
+    public void setCommentTypeId(Integer commentTypeId) {
+        this.commentTypeId = commentTypeId;
     }
 
     public Boolean getCommentType() {
@@ -124,5 +81,13 @@ public class AurArticleComment {
 
     public void setCommentType(Boolean commentType) {
         this.commentType = commentType;
+    }
+
+    public Boolean getCommentDeleted() {
+        return commentDeleted;
+    }
+
+    public void setCommentDeleted(Boolean commentDeleted) {
+        this.commentDeleted = commentDeleted;
     }
 }

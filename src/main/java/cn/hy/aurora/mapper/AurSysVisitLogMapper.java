@@ -1,13 +1,10 @@
 package cn.hy.aurora.mapper;
 
+import aurproject.pojo.AurSysVisitLog;
+import aurproject.pojo.AurSysVisitLogExample;
 import java.util.List;
-
-import cn.hy.aurora.domain.AurSysVisitLog;
-import cn.hy.aurora.domain.AurSysVisitLogExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface AurSysVisitLogMapper {
     long countByExample(AurSysVisitLogExample example);
 

@@ -1,13 +1,10 @@
 package cn.hy.aurora.mapper;
 
+import aurproject.pojo.AurSysUser;
+import aurproject.pojo.AurSysUserExample;
 import java.util.List;
-
-import cn.hy.aurora.domain.AurSysUser;
-import cn.hy.aurora.domain.AurSysUserExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface AurSysUserMapper {
     long countByExample(AurSysUserExample example);
 

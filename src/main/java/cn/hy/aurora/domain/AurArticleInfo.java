@@ -1,29 +1,21 @@
 package cn.hy.aurora.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
-
 public class AurArticleInfo {
-    @JsonProperty("id")
     private Integer articleId;
 
-    @JsonProperty("title")
     private String articleTitle;
 
     private Integer articleAuthor;
 
     private Integer articleLabel;
 
+    private String articleMdUrl;
+
+    private String articleDescription;
+
     private Integer articleCreator;
 
-    private Date articleCreateDate;
-
-    private Integer articleUpdateBy;
-
-    private Date articleUpdateDate;
-
-    private Float articleVersion;
+    private String articleCreateDate;
 
     private Boolean articleOriginal;
 
@@ -67,6 +59,22 @@ public class AurArticleInfo {
         this.articleLabel = articleLabel;
     }
 
+    public String getArticleMdUrl() {
+        return articleMdUrl;
+    }
+
+    public void setArticleMdUrl(String articleMdUrl) {
+        this.articleMdUrl = articleMdUrl == null ? null : articleMdUrl.trim();
+    }
+
+    public String getArticleDescription() {
+        return articleDescription;
+    }
+
+    public void setArticleDescription(String articleDescription) {
+        this.articleDescription = articleDescription == null ? null : articleDescription.trim();
+    }
+
     public Integer getArticleCreator() {
         return articleCreator;
     }
@@ -75,36 +83,12 @@ public class AurArticleInfo {
         this.articleCreator = articleCreator;
     }
 
-    public Date getArticleCreateDate() {
+    public String getArticleCreateDate() {
         return articleCreateDate;
     }
 
-    public void setArticleCreateDate(Date articleCreateDate) {
-        this.articleCreateDate = articleCreateDate;
-    }
-
-    public Integer getArticleUpdateBy() {
-        return articleUpdateBy;
-    }
-
-    public void setArticleUpdateBy(Integer articleUpdateBy) {
-        this.articleUpdateBy = articleUpdateBy;
-    }
-
-    public Date getArticleUpdateDate() {
-        return articleUpdateDate;
-    }
-
-    public void setArticleUpdateDate(Date articleUpdateDate) {
-        this.articleUpdateDate = articleUpdateDate;
-    }
-
-    public Float getArticleVersion() {
-        return articleVersion;
-    }
-
-    public void setArticleVersion(Float articleVersion) {
-        this.articleVersion = articleVersion;
+    public void setArticleCreateDate(String articleCreateDate) {
+        this.articleCreateDate = articleCreateDate == null ? null : articleCreateDate.trim();
     }
 
     public Boolean getArticleOriginal() {

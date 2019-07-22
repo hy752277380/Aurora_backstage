@@ -1,7 +1,6 @@
 package cn.hy.aurora.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AurArticleLabelExample {
@@ -365,183 +364,73 @@ public class AurArticleLabelExample {
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeIsNull() {
-            addCriterion("label_create_time is null");
+        public Criteria andLabelCreateDateIsNull() {
+            addCriterion("label_create_date is null");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeIsNotNull() {
-            addCriterion("label_create_time is not null");
+        public Criteria andLabelCreateDateIsNotNull() {
+            addCriterion("label_create_date is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeEqualTo(Date value) {
-            addCriterion("label_create_time =", value, "labelCreateTime");
+        public Criteria andLabelCreateDateEqualTo(String value) {
+            addCriterion("label_create_date =", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeNotEqualTo(Date value) {
-            addCriterion("label_create_time <>", value, "labelCreateTime");
+        public Criteria andLabelCreateDateNotEqualTo(String value) {
+            addCriterion("label_create_date <>", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeGreaterThan(Date value) {
-            addCriterion("label_create_time >", value, "labelCreateTime");
+        public Criteria andLabelCreateDateGreaterThan(String value) {
+            addCriterion("label_create_date >", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("label_create_time >=", value, "labelCreateTime");
+        public Criteria andLabelCreateDateGreaterThanOrEqualTo(String value) {
+            addCriterion("label_create_date >=", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeLessThan(Date value) {
-            addCriterion("label_create_time <", value, "labelCreateTime");
+        public Criteria andLabelCreateDateLessThan(String value) {
+            addCriterion("label_create_date <", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("label_create_time <=", value, "labelCreateTime");
+        public Criteria andLabelCreateDateLessThanOrEqualTo(String value) {
+            addCriterion("label_create_date <=", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeIn(List<Date> values) {
-            addCriterion("label_create_time in", values, "labelCreateTime");
+        public Criteria andLabelCreateDateLike(String value) {
+            addCriterion("label_create_date like", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeNotIn(List<Date> values) {
-            addCriterion("label_create_time not in", values, "labelCreateTime");
+        public Criteria andLabelCreateDateNotLike(String value) {
+            addCriterion("label_create_date not like", value, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("label_create_time between", value1, value2, "labelCreateTime");
+        public Criteria andLabelCreateDateIn(List<String> values) {
+            addCriterion("label_create_date in", values, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("label_create_time not between", value1, value2, "labelCreateTime");
+        public Criteria andLabelCreateDateNotIn(List<String> values) {
+            addCriterion("label_create_date not in", values, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelUpdateIsNull() {
-            addCriterion("label_update is null");
+        public Criteria andLabelCreateDateBetween(String value1, String value2) {
+            addCriterion("label_create_date between", value1, value2, "labelCreateDate");
             return (Criteria) this;
         }
 
-        public Criteria andLabelUpdateIsNotNull() {
-            addCriterion("label_update is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateEqualTo(Integer value) {
-            addCriterion("label_update =", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateNotEqualTo(Integer value) {
-            addCriterion("label_update <>", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateGreaterThan(Integer value) {
-            addCriterion("label_update >", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("label_update >=", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateLessThan(Integer value) {
-            addCriterion("label_update <", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateLessThanOrEqualTo(Integer value) {
-            addCriterion("label_update <=", value, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateIn(List<Integer> values) {
-            addCriterion("label_update in", values, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateNotIn(List<Integer> values) {
-            addCriterion("label_update not in", values, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateBetween(Integer value1, Integer value2) {
-            addCriterion("label_update between", value1, value2, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateNotBetween(Integer value1, Integer value2) {
-            addCriterion("label_update not between", value1, value2, "labelUpdate");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeIsNull() {
-            addCriterion("label_update_tme is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeIsNotNull() {
-            addCriterion("label_update_tme is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeEqualTo(Date value) {
-            addCriterion("label_update_tme =", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeNotEqualTo(Date value) {
-            addCriterion("label_update_tme <>", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeGreaterThan(Date value) {
-            addCriterion("label_update_tme >", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeGreaterThanOrEqualTo(Date value) {
-            addCriterion("label_update_tme >=", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeLessThan(Date value) {
-            addCriterion("label_update_tme <", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeLessThanOrEqualTo(Date value) {
-            addCriterion("label_update_tme <=", value, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeIn(List<Date> values) {
-            addCriterion("label_update_tme in", values, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeNotIn(List<Date> values) {
-            addCriterion("label_update_tme not in", values, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeBetween(Date value1, Date value2) {
-            addCriterion("label_update_tme between", value1, value2, "labelUpdateTme");
-            return (Criteria) this;
-        }
-
-        public Criteria andLabelUpdateTmeNotBetween(Date value1, Date value2) {
-            addCriterion("label_update_tme not between", value1, value2, "labelUpdateTme");
+        public Criteria andLabelCreateDateNotBetween(String value1, String value2) {
+            addCriterion("label_create_date not between", value1, value2, "labelCreateDate");
             return (Criteria) this;
         }
 

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hy.aurora.mapper.AurArticleLabelMapper">
-    <resultMap id="BaseResultMap" type="cn.hy.aurora.mapper.AurArticleLabel">
-        <result column="label_id" jdbcType="INTEGER" property="labelId"/>
-        <result column="label_name" jdbcType="VARCHAR" property="labelName"/>
-        <result column="label_description" jdbcType="VARCHAR" property="labelDescription"/>
-        <result column="label_create" jdbcType="INTEGER" property="labelCreate"/>
-        <result column="label_create_date" jdbcType="VARCHAR" property="labelCreateDate"/>
-        <result column="label_parent" jdbcType="INTEGER" property="labelParent"/>
-        <result column="label_deleted" jdbcType="BIT" property="labelDeleted"/>
+<mapper namespace="cn.hy.aurora.mapper.AurArticleLikeMapper">
+    <resultMap id="BaseResultMap" type="cn.hy.aurora.mapper.AurArticleLike">
+        <result column="like_id" jdbcType="INTEGER" property="likeId"/>
+        <result column="like_object_id" jdbcType="INTEGER" property="likeObjectId"/>
+        <result column="like_ip" jdbcType="VARCHAR" property="likeIp"/>
+        <result column="like_cerate_date" jdbcType="VARCHAR" property="likeCerateDate"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -71,16 +68,15 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    label_id, label_name, label_description, label_create, label_create_date, label_parent, 
-    label_deleted
+    like_id, like_object_id, like_ip, like_cerate_date
   </sql>
-    <select id="selectByExample" parameterType="cn.hy.aurora.mapper.AurArticleLabelExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="cn.hy.aurora.mapper.AurArticleLikeExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
         </if>
         <include refid="Base_Column_List"/>
-        from aur_article_label
+        from aur_article_like
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -88,98 +84,69 @@
             order by ${orderByClause}
         </if>
     </select>
-    <delete id="deleteByExample" parameterType="cn.hy.aurora.mapper.AurArticleLabelExample">
-        delete from aur_article_label
+    <delete id="deleteByExample" parameterType="cn.hy.aurora.mapper.AurArticleLikeExample">
+        delete from aur_article_like
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="cn.hy.aurora.mapper.AurArticleLabel">
-    insert into aur_article_label (label_id, label_name, label_description, 
-      label_create, label_create_date, label_parent, 
-      label_deleted)
-    values (#{labelId,jdbcType=INTEGER}, #{labelName,jdbcType=VARCHAR}, #{labelDescription,jdbcType=VARCHAR}, 
-      #{labelCreate,jdbcType=INTEGER}, #{labelCreateDate,jdbcType=VARCHAR}, #{labelParent,jdbcType=INTEGER}, 
-      #{labelDeleted,jdbcType=BIT})
+    <insert id="insert" parameterType="cn.hy.aurora.mapper.AurArticleLike">
+    insert into aur_article_like (like_id, like_object_id, like_ip, 
+      like_cerate_date)
+    values (#{likeId,jdbcType=INTEGER}, #{likeObjectId,jdbcType=INTEGER}, #{likeIp,jdbcType=VARCHAR}, 
+      #{likeCerateDate,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="cn.hy.aurora.mapper.AurArticleLabel">
-        insert into aur_article_label
+    <insert id="insertSelective" parameterType="cn.hy.aurora.mapper.AurArticleLike">
+        insert into aur_article_like
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="labelId != null">
-                label_id,
+            <if test="likeId != null">
+                like_id,
             </if>
-            <if test="labelName != null">
-                label_name,
+            <if test="likeObjectId != null">
+                like_object_id,
             </if>
-            <if test="labelDescription != null">
-                label_description,
+            <if test="likeIp != null">
+                like_ip,
             </if>
-            <if test="labelCreate != null">
-                label_create,
-            </if>
-            <if test="labelCreateDate != null">
-                label_create_date,
-            </if>
-            <if test="labelParent != null">
-                label_parent,
-            </if>
-            <if test="labelDeleted != null">
-                label_deleted,
+            <if test="likeCerateDate != null">
+                like_cerate_date,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="labelId != null">
-                #{labelId,jdbcType=INTEGER},
+            <if test="likeId != null">
+                #{likeId,jdbcType=INTEGER},
             </if>
-            <if test="labelName != null">
-                #{labelName,jdbcType=VARCHAR},
+            <if test="likeObjectId != null">
+                #{likeObjectId,jdbcType=INTEGER},
             </if>
-            <if test="labelDescription != null">
-                #{labelDescription,jdbcType=VARCHAR},
+            <if test="likeIp != null">
+                #{likeIp,jdbcType=VARCHAR},
             </if>
-            <if test="labelCreate != null">
-                #{labelCreate,jdbcType=INTEGER},
-            </if>
-            <if test="labelCreateDate != null">
-                #{labelCreateDate,jdbcType=VARCHAR},
-            </if>
-            <if test="labelParent != null">
-                #{labelParent,jdbcType=INTEGER},
-            </if>
-            <if test="labelDeleted != null">
-                #{labelDeleted,jdbcType=BIT},
+            <if test="likeCerateDate != null">
+                #{likeCerateDate,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="cn.hy.aurora.mapper.AurArticleLabelExample" resultType="java.lang.Long">
-        select count(*) from aur_article_label
+    <select id="countByExample" parameterType="cn.hy.aurora.mapper.AurArticleLikeExample" resultType="java.lang.Long">
+        select count(*) from aur_article_like
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </select>
     <update id="updateByExampleSelective" parameterType="map">
-        update aur_article_label
+        update aur_article_like
         <set>
-            <if test="record.labelId != null">
-                label_id = #{record.labelId,jdbcType=INTEGER},
+            <if test="record.likeId != null">
+                like_id = #{record.likeId,jdbcType=INTEGER},
             </if>
-            <if test="record.labelName != null">
-                label_name = #{record.labelName,jdbcType=VARCHAR},
+            <if test="record.likeObjectId != null">
+                like_object_id = #{record.likeObjectId,jdbcType=INTEGER},
             </if>
-            <if test="record.labelDescription != null">
-                label_description = #{record.labelDescription,jdbcType=VARCHAR},
+            <if test="record.likeIp != null">
+                like_ip = #{record.likeIp,jdbcType=VARCHAR},
             </if>
-            <if test="record.labelCreate != null">
-                label_create = #{record.labelCreate,jdbcType=INTEGER},
-            </if>
-            <if test="record.labelCreateDate != null">
-                label_create_date = #{record.labelCreateDate,jdbcType=VARCHAR},
-            </if>
-            <if test="record.labelParent != null">
-                label_parent = #{record.labelParent,jdbcType=INTEGER},
-            </if>
-            <if test="record.labelDeleted != null">
-                label_deleted = #{record.labelDeleted,jdbcType=BIT},
+            <if test="record.likeCerateDate != null">
+                like_cerate_date = #{record.likeCerateDate,jdbcType=VARCHAR},
             </if>
         </set>
         <if test="_parameter != null">
@@ -187,14 +154,11 @@
         </if>
     </update>
     <update id="updateByExample" parameterType="map">
-        update aur_article_label
-        set label_id = #{record.labelId,jdbcType=INTEGER},
-        label_name = #{record.labelName,jdbcType=VARCHAR},
-        label_description = #{record.labelDescription,jdbcType=VARCHAR},
-        label_create = #{record.labelCreate,jdbcType=INTEGER},
-        label_create_date = #{record.labelCreateDate,jdbcType=VARCHAR},
-        label_parent = #{record.labelParent,jdbcType=INTEGER},
-        label_deleted = #{record.labelDeleted,jdbcType=BIT}
+        update aur_article_like
+        set like_id = #{record.likeId,jdbcType=INTEGER},
+        like_object_id = #{record.likeObjectId,jdbcType=INTEGER},
+        like_ip = #{record.likeIp,jdbcType=VARCHAR},
+        like_cerate_date = #{record.likeCerateDate,jdbcType=VARCHAR}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.hy.aurora.mapper.AurSysPictureMapper">
-  <resultMap id="BaseResultMap" type="cn.hy.aurora.domain.AurSysPicture">
+  <resultMap id="BaseResultMap" type="cn.hy.aurora.mapper.AurSysPicture">
     <result column="picture_id" jdbcType="INTEGER" property="pictureId" />
     <result column="picture_name" jdbcType="VARCHAR" property="pictureName" />
     <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
     <result column="picture_create" jdbcType="INTEGER" property="pictureCreate" />
-    <result column="picture_create_date" jdbcType="TIMESTAMP" property="pictureCreateDate" />
-    <result column="picture_update" jdbcType="INTEGER" property="pictureUpdate" />
-    <result column="picture_update_date" jdbcType="TIMESTAMP" property="pictureUpdateDate" />
-    <result column="picture_version" jdbcType="BIT" property="pictureVersion" />
+    <result column="picture_create_date" jdbcType="VARCHAR" property="pictureCreateDate" />
     <result column="picture_deleted" jdbcType="BIT" property="pictureDeleted" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -71,10 +68,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    picture_id, picture_name, picture_url, picture_create, picture_create_date, picture_update, 
-    picture_update_date, picture_version, picture_deleted
+    picture_id, picture_name, picture_url, picture_create, picture_create_date, picture_deleted
   </sql>
-  <select id="selectByExample" parameterType="cn.hy.aurora.domain.AurSysPictureExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.hy.aurora.mapper.AurSysPictureExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -88,23 +84,21 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.hy.aurora.domain.AurSysPictureExample">
+  <delete id="deleteByExample" parameterType="cn.hy.aurora.mapper.AurSysPictureExample">
     delete from aur_sys_picture
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.hy.aurora.domain.AurSysPicture">
+  <insert id="insert" parameterType="cn.hy.aurora.mapper.AurSysPicture">
     insert into aur_sys_picture (picture_id, picture_name, picture_url, 
-      picture_create, picture_create_date, picture_update, 
-      picture_update_date, picture_version, picture_deleted
+      picture_create, picture_create_date, picture_deleted
       )
     values (#{pictureId,jdbcType=INTEGER}, #{pictureName,jdbcType=VARCHAR}, #{pictureUrl,jdbcType=VARCHAR}, 
-      #{pictureCreate,jdbcType=INTEGER}, #{pictureCreateDate,jdbcType=TIMESTAMP}, #{pictureUpdate,jdbcType=INTEGER}, 
-      #{pictureUpdateDate,jdbcType=TIMESTAMP}, #{pictureVersion,jdbcType=BIT}, #{pictureDeleted,jdbcType=BIT}
+      #{pictureCreate,jdbcType=INTEGER}, #{pictureCreateDate,jdbcType=VARCHAR}, #{pictureDeleted,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.hy.aurora.domain.AurSysPicture">
+  <insert id="insertSelective" parameterType="cn.hy.aurora.mapper.AurSysPicture">
     insert into aur_sys_picture
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="pictureId != null">
@@ -121,15 +115,6 @@
       </if>
       <if test="pictureCreateDate != null">
         picture_create_date,
-      </if>
-      <if test="pictureUpdate != null">
-        picture_update,
-      </if>
-      <if test="pictureUpdateDate != null">
-        picture_update_date,
-      </if>
-      <if test="pictureVersion != null">
-        picture_version,
       </if>
       <if test="pictureDeleted != null">
         picture_deleted,
@@ -149,23 +134,14 @@
         #{pictureCreate,jdbcType=INTEGER},
       </if>
       <if test="pictureCreateDate != null">
-        #{pictureCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pictureUpdate != null">
-        #{pictureUpdate,jdbcType=INTEGER},
-      </if>
-      <if test="pictureUpdateDate != null">
-        #{pictureUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pictureVersion != null">
-        #{pictureVersion,jdbcType=BIT},
+        #{pictureCreateDate,jdbcType=VARCHAR},
       </if>
       <if test="pictureDeleted != null">
         #{pictureDeleted,jdbcType=BIT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.hy.aurora.domain.AurSysPictureExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.hy.aurora.mapper.AurSysPictureExample" resultType="java.lang.Long">
     select count(*) from aur_sys_picture
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -187,16 +163,7 @@
         picture_create = #{record.pictureCreate,jdbcType=INTEGER},
       </if>
       <if test="record.pictureCreateDate != null">
-        picture_create_date = #{record.pictureCreateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.pictureUpdate != null">
-        picture_update = #{record.pictureUpdate,jdbcType=INTEGER},
-      </if>
-      <if test="record.pictureUpdateDate != null">
-        picture_update_date = #{record.pictureUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.pictureVersion != null">
-        picture_version = #{record.pictureVersion,jdbcType=BIT},
+        picture_create_date = #{record.pictureCreateDate,jdbcType=VARCHAR},
       </if>
       <if test="record.pictureDeleted != null">
         picture_deleted = #{record.pictureDeleted,jdbcType=BIT},
@@ -212,10 +179,7 @@
       picture_name = #{record.pictureName,jdbcType=VARCHAR},
       picture_url = #{record.pictureUrl,jdbcType=VARCHAR},
       picture_create = #{record.pictureCreate,jdbcType=INTEGER},
-      picture_create_date = #{record.pictureCreateDate,jdbcType=TIMESTAMP},
-      picture_update = #{record.pictureUpdate,jdbcType=INTEGER},
-      picture_update_date = #{record.pictureUpdateDate,jdbcType=TIMESTAMP},
-      picture_version = #{record.pictureVersion,jdbcType=BIT},
+      picture_create_date = #{record.pictureCreateDate,jdbcType=VARCHAR},
       picture_deleted = #{record.pictureDeleted,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />

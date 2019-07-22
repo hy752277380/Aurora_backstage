@@ -1,7 +1,5 @@
 package cn.hy.aurora.service.impl;
 
-import cn.hy.aurora.domain.AurArticleCommentExample;
-import cn.hy.aurora.mapper.AurArticleCommentMapper;
 import cn.hy.aurora.service.AurArticleCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

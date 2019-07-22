@@ -1,6 +1,5 @@
 package cn.hy.aurora.service.impl;
 
-import cn.hy.aurora.mapper.AurAnalysisMapper;
 import cn.hy.aurora.service.AurAnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

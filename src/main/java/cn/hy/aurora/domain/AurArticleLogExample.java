@@ -1,7 +1,6 @@
 package cn.hy.aurora.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AurArticleLogExample {
@@ -235,52 +234,62 @@ public class AurArticleLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeEqualTo(Date value) {
+        public Criteria andVisitIntoTimeEqualTo(String value) {
             addCriterion("visit_into_time =", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeNotEqualTo(Date value) {
+        public Criteria andVisitIntoTimeNotEqualTo(String value) {
             addCriterion("visit_into_time <>", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeGreaterThan(Date value) {
+        public Criteria andVisitIntoTimeGreaterThan(String value) {
             addCriterion("visit_into_time >", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andVisitIntoTimeGreaterThanOrEqualTo(String value) {
             addCriterion("visit_into_time >=", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeLessThan(Date value) {
+        public Criteria andVisitIntoTimeLessThan(String value) {
             addCriterion("visit_into_time <", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeLessThanOrEqualTo(Date value) {
+        public Criteria andVisitIntoTimeLessThanOrEqualTo(String value) {
             addCriterion("visit_into_time <=", value, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeIn(List<Date> values) {
+        public Criteria andVisitIntoTimeLike(String value) {
+            addCriterion("visit_into_time like", value, "visitIntoTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitIntoTimeNotLike(String value) {
+            addCriterion("visit_into_time not like", value, "visitIntoTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVisitIntoTimeIn(List<String> values) {
             addCriterion("visit_into_time in", values, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeNotIn(List<Date> values) {
+        public Criteria andVisitIntoTimeNotIn(List<String> values) {
             addCriterion("visit_into_time not in", values, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeBetween(Date value1, Date value2) {
+        public Criteria andVisitIntoTimeBetween(String value1, String value2) {
             addCriterion("visit_into_time between", value1, value2, "visitIntoTime");
             return (Criteria) this;
         }
 
-        public Criteria andVisitIntoTimeNotBetween(Date value1, Date value2) {
+        public Criteria andVisitIntoTimeNotBetween(String value1, String value2) {
             addCriterion("visit_into_time not between", value1, value2, "visitIntoTime");
             return (Criteria) this;
         }
@@ -365,52 +374,62 @@ public class AurArticleLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeEqualTo(Date value) {
+        public Criteria andLogCreateTimeEqualTo(String value) {
             addCriterion("log_create_time =", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeNotEqualTo(Date value) {
+        public Criteria andLogCreateTimeNotEqualTo(String value) {
             addCriterion("log_create_time <>", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeGreaterThan(Date value) {
+        public Criteria andLogCreateTimeGreaterThan(String value) {
             addCriterion("log_create_time >", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andLogCreateTimeGreaterThanOrEqualTo(String value) {
             addCriterion("log_create_time >=", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeLessThan(Date value) {
+        public Criteria andLogCreateTimeLessThan(String value) {
             addCriterion("log_create_time <", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeLessThanOrEqualTo(Date value) {
+        public Criteria andLogCreateTimeLessThanOrEqualTo(String value) {
             addCriterion("log_create_time <=", value, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeIn(List<Date> values) {
+        public Criteria andLogCreateTimeLike(String value) {
+            addCriterion("log_create_time like", value, "logCreateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogCreateTimeNotLike(String value) {
+            addCriterion("log_create_time not like", value, "logCreateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogCreateTimeIn(List<String> values) {
             addCriterion("log_create_time in", values, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeNotIn(List<Date> values) {
+        public Criteria andLogCreateTimeNotIn(List<String> values) {
             addCriterion("log_create_time not in", values, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeBetween(Date value1, Date value2) {
+        public Criteria andLogCreateTimeBetween(String value1, String value2) {
             addCriterion("log_create_time between", value1, value2, "logCreateTime");
             return (Criteria) this;
         }
 
-        public Criteria andLogCreateTimeNotBetween(Date value1, Date value2) {
+        public Criteria andLogCreateTimeNotBetween(String value1, String value2) {
             addCriterion("log_create_time not between", value1, value2, "logCreateTime");
             return (Criteria) this;
         }

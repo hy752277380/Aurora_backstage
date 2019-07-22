@@ -1,8 +1,5 @@
 package cn.hy.aurora.service.impl;
 
-import cn.hy.aurora.domain.AurArticleLabel;
-import cn.hy.aurora.domain.AurArticleLabelExample;
-import cn.hy.aurora.mapper.AurArticleLabelMapper;
 import cn.hy.aurora.service.AurArticleLabelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

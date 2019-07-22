@@ -1,13 +1,10 @@
 package cn.hy.aurora.mapper;
 
+import aurproject.pojo.AurSysPicture;
+import aurproject.pojo.AurSysPictureExample;
 import java.util.List;
-
-import cn.hy.aurora.domain.AurSysPicture;
-import cn.hy.aurora.domain.AurSysPictureExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface AurSysPictureMapper {
     long countByExample(AurSysPictureExample example);
 
