@@ -16,7 +16,6 @@ import java.util.Map;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
-    @SuppressWarnings("all")
     @Autowired
     private AurArticleInfoMapper aurArticleInfoMapper;
 
