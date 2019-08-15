@@ -10,9 +10,9 @@ import java.util.Date;
  * @Param <T>
  */
 public class BaseResponse<T> {
-    private static final int CODE_SUCCESS = 200;
-    private static final int CODE_VALID_FAIL = 400;
-    private static final int CODE_ERROR = 500;
+    public static final int CODE_SUCCESS = 200;
+    public static final int CODE_VALID_FAIL = 400;
+    public static final int CODE_ERROR = 500;
 
     private Date timestamp;
     private int status;
@@ -48,6 +48,18 @@ public class BaseResponse<T> {
 
     public static <T> BaseResponse buildSuccess(String msg, T data) {
         return new BaseResponse(CODE_SUCCESS, null, msg, data);
+    }
+
+    public static BaseResponse buildError() {
+        return new BaseResponse(CODE_ERROR, null, "error", null);
+    }
+
+    public static BaseResponse buildError(String msg) {
+        return new BaseResponse(CODE_ERROR, null, msg, null);
+    }
+
+    public static BaseResponse buildError(Integer code, String msg) {
+        return new BaseResponse(code, null, msg, null);
     }
 
     public Date getTimestamp() {

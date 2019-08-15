@@ -1,6 +1,10 @@
 #服务
 server:
   port: 8809
+aurora:
+  global:
+    md-path: E:/Attachment/aurora/
+
 #数据库
 spring:
   datasource:
