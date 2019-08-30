@@ -1,5 +1,7 @@
 package cn.hy.aurora.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class AurSysUser {
     private Integer userId;
 
@@ -9,6 +11,7 @@ public class AurSysUser {
 
     private String userGithub;
 
+    @JsonIgnore
     private String userAuthCode;
 
     private String userProfilePhoto;
@@ -16,6 +19,9 @@ public class AurSysUser {
     private String userRegistrationTime;
 
     private Boolean userDeleted;
+
+    @JsonIgnore
+    private String userRole;
 
     public Integer getUserId() {
         return userId;
@@ -79,5 +85,13 @@ public class AurSysUser {
 
     public void setUserDeleted(Boolean userDeleted) {
         this.userDeleted = userDeleted;
+    }
+
+    public String getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole == null ? null : userRole.trim();
     }
 }

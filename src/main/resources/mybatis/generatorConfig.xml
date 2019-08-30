@@ -53,7 +53,8 @@
         <!-- 指定数据表 -->
         <!--<table tableName="aur_article_%"></table>
         <table tableName="aur_sys_%"></table>-->
-        <table tableName="aur_article_info"></table>
+        <!--<table tableName="aur_article_info"></table>-->
+        <table tableName="aur_sys_user"></table>
         <!-- 有些表的字段需要指定java类型
         <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
           <property name="useActualColumnNames" value="true"/>

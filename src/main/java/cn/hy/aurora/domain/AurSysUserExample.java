@@ -643,6 +643,76 @@ public class AurSysUserExample {
             addCriterion("user_deleted not between", value1, value2, "userDeleted");
             return (Criteria) this;
         }
+
+        public Criteria andUserRoleIsNull() {
+            addCriterion("user_role is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleIsNotNull() {
+            addCriterion("user_role is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleEqualTo(String value) {
+            addCriterion("user_role =", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleNotEqualTo(String value) {
+            addCriterion("user_role <>", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleGreaterThan(String value) {
+            addCriterion("user_role >", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleGreaterThanOrEqualTo(String value) {
+            addCriterion("user_role >=", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleLessThan(String value) {
+            addCriterion("user_role <", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleLessThanOrEqualTo(String value) {
+            addCriterion("user_role <=", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleLike(String value) {
+            addCriterion("user_role like", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleNotLike(String value) {
+            addCriterion("user_role not like", value, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleIn(List<String> values) {
+            addCriterion("user_role in", values, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleNotIn(List<String> values) {
+            addCriterion("user_role not in", values, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleBetween(String value1, String value2) {
+            addCriterion("user_role between", value1, value2, "userRole");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserRoleNotBetween(String value1, String value2) {
+            addCriterion("user_role not between", value1, value2, "userRole");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

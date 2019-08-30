@@ -5,6 +5,12 @@ aurora:
   global:
     md-path: E:/Attachment/aurora/
 
+jwt:
+  secret: secret
+  expiration: 7200000
+  header: "Authorization"
+  tokenHead: "Bearer "
+
 #数据库
 spring:
   datasource:
